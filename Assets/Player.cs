@@ -37,19 +37,23 @@ public class Player : MonoBehaviour
         }
 
         if (Input.GetKeyDown("r")){
-            reset();
+            Reset();
         }
 
         if (transform.position.y < -15f){
-            reset();
+            Reset();
         }
     }
 
-    void reset(){
+    void Reset(){
         transform.position = new Vector3 (0.3416838f,3.114f,0.07361376f);
         rb.velocity = new Vector3 (0f,0f,0f);
         transform.rotation = q;
         rb.angularVelocity =  new Vector3 (0f,0f,0f);
+        jump = true;
+    }
+
+    public void RefreshJump(){
         jump = true;
     }
 }
