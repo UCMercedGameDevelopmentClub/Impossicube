@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    GameManager gameManager;
+
     Rigidbody rb;
     Quaternion q;
     bool jump;
@@ -13,6 +15,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         q = transform.rotation;
         jump = true;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
         transform.rotation = q;
         rb.angularVelocity =  new Vector3 (0f,0f,0f);
         jump = true;
+        gameManager.ResetTimer();
     }
 
     public void RefreshJump(){

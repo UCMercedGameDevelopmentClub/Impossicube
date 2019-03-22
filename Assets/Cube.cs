@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-
+    [SerializeField]
+    protected GameManager gameManager;
 
     void Start()
     {
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
 

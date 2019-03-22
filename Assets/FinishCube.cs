@@ -9,6 +9,7 @@ public class FinishCube : Cube
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         screenText = GameObject.Find("Win Message").GetComponent<Text>();
     }
 
@@ -21,5 +22,6 @@ public class FinishCube : Cube
     override protected void OnPlayerTouch(GameObject gameObject)
     {
         screenText.text = "You Win";
+        gameManager.Win();
     }
 }
