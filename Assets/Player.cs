@@ -9,9 +9,11 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     Quaternion q;
     bool jump;
+    Vector3 start_pos;
     // Start is called before the first frame update
     void Start()
     {
+        start_pos = transform.position;
         rb = GetComponent<Rigidbody>();
         q = transform.rotation;
         jump = true;
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
     }
 
     void Reset(){
-        transform.position = new Vector3 (0.3416838f,3.114f,0.07361376f);
+        transform.position = start_pos;
         rb.velocity = new Vector3 (0f,0f,0f);
         transform.rotation = q;
         rb.angularVelocity =  new Vector3 (0f,0f,0f);

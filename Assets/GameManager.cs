@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     Timer timer;
@@ -14,7 +16,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("1"))
+        {
+            SceneManager.LoadScene("level0");
+        }
+
+        if (Input.GetKey("2"))
+        {
+            SceneManager.LoadScene("level9");
+        }
     }
 
     public void ResetTimer()
